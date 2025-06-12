@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <math.h>
+#define ll long long
+int main(){
+    while(1){
+        printf("----------MAY TINH PHUONG TRINH BAC 2----------\n");
+        printf("1. VAO MAY TINH!\n");
+        printf("2. THOAT CHUONG TRINH!\n");
+        int x;
+        printf("Vui long nhan tuy chon : ");
+        scanf("%d", &x);
+        if(x == 1){
+                printf("Phuong trinh bac 2 se co dang la : ax^2 + bx + c\n");
+                ll a, b, c;
+                printf("Vui long nhap theo mau duoi day!\n");
+                for(int i = 1; i <= 3; i++){
+                    if(i == 1){
+                        printf("Vui long nhap a : ");
+                        scanf("%lld", &a);
+                    }
+                    else if(i == 2){
+                        printf("Vui long nhap b : ");
+                        scanf("%lld", &b);
+                    }
+                    else{
+                        printf("Vui long nhap c : ");
+                        scanf("%lld", &c);
+                    }
+                }
+
+            double delta = (ll)b*b - 4ll *a * c;
+            if(a != 0){
+                if(delta > 0){
+                    //x1 = -b+sqrt(delta)/2a
+                    //x2 = -b-sqrt(delta)/2a
+                    double x1 = ((double)-b + sqrt(delta))/(2 * (double)a);
+                    double x2 = ((double)-b - sqrt(delta))/(2 * (double)a);
+                    if(x1 <= x2){
+                        printf("%.2lf\n%.2lf\n", x1, x2);
+                    }
+                    else{
+                        printf("%.2lf\n%.2lf\n", x2, x1);
+                    }
+                }
+                else if(delta == 0){
+                    //x1=x2=-b/2a
+                    double x = (double)-b/(2.0 * a);
+                    printf("%.2lf\n", x);
+                }
+                else{
+                    printf("PHUONG TRINH VO NGHIEM\n");
+                }
+                }
+                else{
+                    if(b == 0){
+                        if(c == 0){
+                            printf("PHUONG TRINH VO SO NGHIEM\n");
+                        }
+                        else{
+                            printf("PHUONG TRINH VO NGHIEM\n");
+                        }
+                    }
+                    else{
+                        printf("%.2lf\n", (double)-c/b);
+                    }
+                }
+                }
+                else if (x == 2){
+                    break;
+                }
+    }
+
+    return 0;
+}
